@@ -17,6 +17,4 @@ RUN omd create check_mk
 
 EXPOSE 80
 
-VOLUME [/opt/omd/check_mk]
-
-ENTRYPOINT ["/usr/bin/omd" "start" "check_mk"]
+ENTRYPOINT ["/usr/bin/omd", "start", "check_mk"]
