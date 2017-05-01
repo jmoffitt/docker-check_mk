@@ -16,6 +16,5 @@ RUN echo "ServerName $HOSTNAME" >> /etc/apache2/apache2.conf
 RUN omd create check_mk
 
 EXPOSE 80
-VOLUME ["/opt/omd/sites/check_mk/tmp"]
 
 ENTRYPOINT ["/usr/bin/omd", "start", "check_mk"]
