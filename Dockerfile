@@ -2,7 +2,7 @@
 # v 1.1.2
 
 FROM ubuntu:xenial
-MAINTAINER J. Patrick Moffitt (zuryn@zuryn.net)
+MAINTAINER J. Patrick Moffitt (jmoffitt@rimrockcapital.com)
 # Maintainer is a relative term in this case
 
 RUN apt-get update
@@ -14,6 +14,9 @@ RUN dpkg -i /root/check-mk-raw-1.2.8p21_0.xenial_amd64.deb
 RUN apt-get -y upgrade
 RUN echo "ServerName $HOSTNAME" >> /etc/apache2/apache2.conf
 RUN omd create check_mk
+
+RUN omd umount check_mk
+RUN omd config check_mk set TMPFS off
 
 EXPOSE 80
 
