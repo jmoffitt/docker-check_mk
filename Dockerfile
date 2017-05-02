@@ -17,7 +17,9 @@ RUN omd create check_mk
 
 RUN omd umount check_mk
 RUN omd config check_mk set TMPFS off
+RUN omd start check_mk
 
 EXPOSE 80
 
-ENTRYPOINT ["/usr/bin/omd", "start", "check_mk"]
+CMD ["-D", "FOREGROUND"]
+ENTRYPOINT ["apachectl"]
