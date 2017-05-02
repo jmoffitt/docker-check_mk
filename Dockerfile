@@ -19,6 +19,9 @@ RUN omd umount check_mk
 RUN omd config check_mk set TMPFS off
 RUN omd start check_mk
 
+#RUN sed -i 's/80/8888/g' /etc/apache2/sites-available/000-default.conf
+#RUN sed -i 's/80/8888/g' /etc/apache2/ports.conf
+
 EXPOSE 80
 
 CMD ["-D", "FOREGROUND"]
