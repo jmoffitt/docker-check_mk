@@ -10,7 +10,7 @@ RUN apt-get -y install apache2 apache2-bin apache2-data apache2-utils bind9-host
 
 ADD https://mathias-kettner.de/support/1.2.8p21/check-mk-raw-1.2.8p21_0.xenial_amd64.deb /root/
 
-VOLUME /opt/check_mk
+VOLUME /opt/omd
 
 RUN dpkg -i /root/check-mk-raw-1.2.8p21_0.xenial_amd64.deb
 
