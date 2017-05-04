@@ -25,7 +25,7 @@ RUN omd start check_mk
 
 EXPOSE 80
 
-VOLUME ["/opt/omd"]
+#VOLUME ["/opt/omd"]
 
 CMD ["-D", "FOREGROUND"]
 ENTRYPOINT ["apachectl"]
