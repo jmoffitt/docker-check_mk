@@ -10,8 +10,6 @@ RUN apt-get -y install apache2 apache2-bin apache2-data apache2-utils bind9-host
 
 ADD https://mathias-kettner.de/support/1.2.8p21/check-mk-raw-1.2.8p21_0.xenial_amd64.deb /root/
 
-VOLUME /opt/omd
-
 RUN dpkg -i /root/check-mk-raw-1.2.8p21_0.xenial_amd64.deb
 
 RUN apt-get -y upgrade
@@ -26,6 +24,8 @@ RUN omd start check_mk
 #RUN sed -i 's/80/8888/g' /etc/apache2/ports.conf
 
 EXPOSE 80
+
+VOLUME ["/opt/omd"]
 
 CMD ["-D", "FOREGROUND"]
 ENTRYPOINT ["apachectl"]
